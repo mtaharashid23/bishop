@@ -207,3 +207,163 @@ body {
 .counter {
     display: inline-block;
 }
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* Tablet and Mobile (General) */
+@media (max-width: 991.98px) {
+    .hero-section {
+        min-height: auto;
+        padding: 80px 0;
+        text-align: center;
+    }
+    .hero-section .d-flex {
+        justify-content: center;
+    }
+    .hero-section .text-start {
+        text-align: center !important;
+    }
+    .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .col-lg-7, .col-lg-6, .col-lg-5 {
+        margin-bottom: 30px;
+    }
+}
+
+/* Mobile Devices (Phones) */
+@media (max-width: 767.98px) {
+    h1.display-4 {
+        font-size: 2rem;
+    }
+    h2.display-5, h2.display-6 {
+        font-size: 1.75rem;
+    }
+    .btn-lg {
+        width: 100%; /* Mobile par buttons full width ho jayenge */
+        margin-bottom: 10px;
+        margin-left: 0 !important;
+    }
+    .hero-section .d-flex.gap-3 {
+        flex-direction: column;
+        gap: 10px !important;
+    }
+    .metric-item {
+        padding: 10px;
+    }
+    .metric-item i {
+        font-size: 2rem;
+    }
+    .personal-note {
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+    /* Contact form spacing */
+    .p-5 {
+        padding: 2rem !important;
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    .impact-card h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Navbar mobile background */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: var(--primary-navy);
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+}
+
+/* --- RESPONSIVE BUTTONS --- */
+
+/* Global Button Base Style */
+.btn {
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    /* Font size auto-scales between 15px and 18px */
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem); 
+    padding: 12px 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; /* Text line change nahi karega */
+}
+
+/* Button Large (Hero Section specifically) */
+.btn-lg {
+    padding: 14px 35px;
+    font-weight: 600;
+}
+
+/* Red Button Hover */
+.btn-academic-red:hover {
+    background-color: var(--hover-red);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(200, 16, 46, 0.25);
+}
+
+/* --- MEDIA QUERIES FOR BUTTONS --- */
+
+/* Laptops & Tablets (1024px to 768px) */
+@media (max-width: 991.98px) {
+    .btn {
+        padding: 10px 22px;
+        font-size: 1rem; /* Thora chota size for tablets */
+    }
+    
+    .btn-lg {
+        padding: 12px 30px;
+    }
+}
+
+/* Mobile Devices (Phones) */
+@media (max-width: 767.98px) {
+    .btn {
+        width: 100%; /* Mobile par buttons full width ho jayenge */
+        font-size: 0.9rem; /* Minimum readable size for mobile */
+        padding: 14px 20px;
+        margin-bottom: 12px; /* Ek ke niche ek space */
+        justify-content: center;
+        display: flex;
+    }
+    
+    /* Hero section buttons group adjustment */
+    .hero-section .d-flex.gap-3 {
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px; /* Buttons zyada wide na hon */
+        margin: 0 auto;
+    }
+    
+    .btn-lg {
+        font-size: 1rem; /* Hero button thora prominent rahega */
+    }
+}
+
+/* Very Small Screens (iPhone SE etc.) */
+@media (max-width: 375px) {
+    .btn {
+        font-size: 0.85rem;
+        padding: 12px 15px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-section img {
+        width: 250px !important;        
+    }
+}
