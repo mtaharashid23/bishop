@@ -1,0 +1,209 @@
+:root {
+    --primary-navy: #0A2540;
+    --academic-red: #C8102E;
+    --hover-red: #A30D25;
+    --light-bg: #F5F7FA;
+    --dark-text: #1F2937;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-text);
+    scroll-behavior: smooth;
+}
+
+.bg-navy {
+    background-color: var(--primary-navy) !important;
+}
+
+.text-navy {
+    color: var(--primary-navy);
+}
+
+.text-academic-red {
+    color: var(--academic-red);
+}
+
+.btn-academic-red {
+    background-color: var(--academic-red);
+    color: var(--white);
+    border: none;
+    padding: 12px 28px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-academic-red:hover {
+    background-color: var(--hover-red);
+    color: var(--white);
+}
+
+.btn-navy {
+    background-color: var(--primary-navy);
+    padding: 12px 28px;
+    font-weight: 600;
+}
+
+.btn-outline-navy {
+    border: 2px solid var(--primary-navy);
+    color: var(--primary-navy);
+    font-weight: 600;
+}
+
+.btn-outline-navy:hover {
+    background-color: var(--primary-navy);
+    color: #fff;
+}
+
+/* Hero Section Adjustments */
+.hero-section {
+    min-height: 80vh;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--academic-red) !important;
+}
+
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Form Styling */
+.form-control:focus {
+    border-color: var(--academic-red);
+    box-shadow: 0 0 0 0.25rem rgba(200, 16, 46, 0.25);
+}
+
+/* Navbar Enhancements */
+.navbar {
+    transition: all 0.3s ease;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    letter-spacing: 1px;
+}
+
+/* Button Styling & Hovers */
+.btn-academic-red {
+    background-color: var(--academic-red);
+    color: var(--white);
+    border: none;
+    padding: 14px 32px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-academic-red:hover {
+    background-color: var(--hover-red);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(200, 16, 46, 0.2);
+}
+
+.btn-navy {
+    background-color: var(--primary-navy);
+    color: white;
+    padding: 14px 32px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-navy:hover {
+    background-color: #143a5f;
+    transform: translateY(-3px);
+    color: white;
+}
+
+.btn-outline-navy {
+    border: 2px solid var(--primary-navy);
+    color: var(--primary-navy);
+    font-weight: 600;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-navy:hover {
+    background-color: var(--primary-navy);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Typography Accents */
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--academic-red);
+}
+
+.section-title-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Impact Cards */
+.impact-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.impact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Personal Note Section (For Dedications) */
+.personal-note {
+    background-color: #f8f9fa;
+    border-left: 5px solid var(--academic-red);
+    padding: 40px;
+    font-style: italic;
+    border-radius: 0 10px 10px 0;
+}
+
+.metric-item {
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.metric-item i {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.metric-item:hover i {
+    transform: scale(1.1);
+}
+
+.counter {
+    display: inline-block;
+}
