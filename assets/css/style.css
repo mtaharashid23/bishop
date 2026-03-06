@@ -367,3 +367,8 @@ body {
         width: 250px !important;        
     }
 }
+
+.header-logo {
+    width: 60px;
+    margin-right: 1rem;
+}
