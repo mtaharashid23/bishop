@@ -10,13 +10,6 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Placeholder for contact form submission
-document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you for your inquiry, Dr. Bishop will contact you soon.');
-    this.reset();
-});
-
 // Counter Animation Function
 const runCounter = () => {
     const counters = document.querySelectorAll('.counter');
