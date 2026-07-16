@@ -111,7 +111,7 @@ function initContactForm(formId) {
                     showToast('success', data.message);
                     form.reset();
                     setTimeout(() => {
-                        window.location.href = 'thank-you.html';
+                        window.location.href = 'thank-you';
                     }, 1500);
                 } else {
                     showToast('error', data.message);
@@ -160,7 +160,7 @@ function initContactForm(formId) {
                     }
                     form.reset();
                     setTimeout(() => {
-                        window.location.href = 'thank-you.html';
+                        window.location.href = 'thank-you';
                     }, 1500);
                 } else {
                     if (window.toastr) {
