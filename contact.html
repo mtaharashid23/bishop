@@ -3,10 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Dr. Michael Bishop</title>
+    <meta name="description" content="Contact Dr. Michael Bishop for speaking engagements, leadership mentoring, educational consulting, and principal coaching services.">
+    <meta name="keywords" content="contact Dr. Michael Bishop, school leadership consulting, educational speaker, principal mentoring, leadership coaching">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Dr. Michael Bishop">
+    <meta name="theme-color" content="#0A2540">
+    <link rel="shortcut icon" href="assets/images/principal-playbook-seal.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="assets/images/principal-playbook-seal.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact Dr. Michael Bishop">
+    <meta property="og:description" content="Contact Dr. Michael Bishop for speaking engagements, leadership mentoring, educational consulting, and principal coaching services.">
+    <meta property="og:image" content="assets/images/principal-playbook-seal.png">
+    <meta property="og:site_name" content="Dr. Michael Bishop">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Dr. Michael Bishop">
+    <meta name="twitter:description" content="Contact Dr. Michael Bishop for speaking engagements, leadership mentoring, educational consulting, and principal coaching services.">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -66,19 +83,23 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="p-5 bg-light rounded shadow-sm">
-                        <form>
+                        <form id="contactForm">
                             <div class="row g-3">
                                 <div class="col-md-6 mb-3">
-                                    <label class="form-label fw-bold">Full Name</label>
-                                    <input type="text" class="form-control" placeholder="Your Name">
+                                    <label class="form-label fw-bold">Full Name <span class="text-academic-red">*</span></label>
+                                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-bold">Email <span class="text-academic-red">*</span></label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="your@email.com" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label fw-bold">Organization</label>
-                                    <input type="text" class="form-control" placeholder="District or School">
+                                    <input type="text" class="form-control" id="organization" name="organization" placeholder="District or School">
                                 </div>
-                                <div class="col-12 mb-3">
+                                <div class="col-md-6 mb-3">
                                     <label class="form-label fw-bold">Inquiry Type</label>
-                                    <select class="form-select">
+                                    <select class="form-select" id="inquiryType" name="inquiryType">
                                         <option>Speaking Engagement</option>
                                         <option>Consulting / Mentoring</option>
                                         <option>Book Inquiry</option>
@@ -86,13 +107,15 @@
                                     </select>
                                 </div>
                                 <div class="col-12 mb-4">
-                                    <label class="form-label fw-bold">Message</label>
-                                    <textarea class="form-control" rows="5"
-                                        placeholder="Tell us about your event or needs..."></textarea>
+                                    <label class="form-label fw-bold">Message <span class="text-academic-red">*</span></label>
+                                    <textarea class="form-control" id="message" name="message" rows="5"
+                                        placeholder="Tell us about your event or needs..." required></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-navy text-white btn-lg w-100">Send
-                                        Inquiry</button>
+                                    <button type="submit" id="submitBtn" class="btn btn-navy text-white btn-lg w-100">
+                                        <span id="btnText">Send Inquiry</span>
+                                        <span id="spinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -105,7 +128,12 @@
     <footer class="py-4 bg-navy text-white text-center">
         <div class="container small">
             <div class="d-flex algin-items-center justify-content-between flex-wrap">
-                <p class="mb-0">© 2026 Dr. Michael Bishop. All rights reserved. | School Leadership Consulting</p>
+                <div>
+                    <p class="mb-0">© 2026 Dr. Michael Bishop. All rights reserved. | School Leadership Consulting</p>
+                    <p class="mb-0">Designed & Developed by
+                        <a href="https://gilbertonpublisher.com" target="_blank" rel="noopener" class="text-white text-decoration-underline">Gilberton Publisher</a>
+                    </p>
+                </div>
                 <ul class="social_links">
                     <li><a href="http://www.youtube.com/@MichaelEBishop" target="_blank"><i
                                 class="fa-brands fa-youtube"></i></a></li>
@@ -117,8 +145,38 @@
     </footer>
 
     <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+        try {
+            if (typeof toastr !== 'undefined') {
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
+            }
+        } catch (error) {
+            console.error('Toastr init error:', error);
+        }
+        if (typeof initContactForm === 'function') {
+            initContactForm('contactForm');
+        }
+    </script>
 </body>
 
 </html>
