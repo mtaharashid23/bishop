@@ -1,0 +1,16 @@
+# robots.txt for https://theprincipalplaybook.com
+
+User-agent: *
+Allow: /
+
+# Block internal search pages (if they exist)
+Disallow: /search/
+Disallow: /?s=
+
+# Optional: Block temporary/system folders (only if they exist)
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /cache/
+
+# Sitemap
+Sitemap: https://theprincipalplaybook.com/sitemap.xml
