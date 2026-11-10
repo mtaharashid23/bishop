@@ -1,7 +1,30 @@
-RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.*)$ $1.html
+# ------------------------------------------------------------------
+# SITE DOWN MODE
+# Every request (pages, folders, files, PHP, assets) returns a
+# 503 Service Unavailable page served by 503.php.
+# To bring the site back: replace this file with .htaccess.backup
+# ------------------------------------------------------------------
 
-# Error Documents
-ErrorDocument 404 /404.html
+Options -Indexes
+DirectoryIndex 503.php
+
+ErrorDocument 400 /503.php
+ErrorDocument 401 /503.php
+ErrorDocument 403 /503.php
+ErrorDocument 404 /503.php
+ErrorDocument 405 /503.php
+ErrorDocument 500 /503.php
+ErrorDocument 502 /503.php
+ErrorDocument 503 /503.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Let SSL certificate renewal (AutoSSL / Let's Encrypt) keep working
+RewriteRule ^\.well-known/(acme-challenge|pki-validation)/ - [L]
+
+# Send everything else to the error page
+RewriteCond %{REQUEST_URI} !^/503\.php$
+RewriteRule ^ /503.php [L]
+</IfModule>
